@@ -13,18 +13,18 @@
         <thead class="font-bold">
             <tr>
                 <td class="px-4 py-2"><a href="?sort=title&order={{ $order }}">Pealkiri</a></td>
-                <td class="px-4 py-2">Autor</td>
-                <td class="px-4 py-2"><a href="?sort=release_date&order={{ $order }}">Aasta</a></td>
-                <td class="px-4 py-2"><a href="?sort=pages&order={{ $order }}">Lehekülgi</a></td>
-                <td class="px-4 py-2"><a href="?sort=price&order={{ $order }}">Hind</a></td>
-                <td class="px-4 py-2"><a href="?sort=stock_saldo&order={{ $order }}">Laoseis</a></td>
-                <td class="px-4 py-2"><a href="?sort=type&order={{ $order }}">Tüüp</a></td>
+                <td class="px-4 py-2 w-32">Autor</td>
+                <td class="px-4 py-2 w-32"><a href="?sort=release_date&order={{ $order }}">Aasta</a></td>
+                <td class="px-4 py-2 w-32"><a href="?sort=pages&order={{ $order }}">Lehekülgi</a></td>
+                <td class="px-4 py-2 w-32"><a href="?sort=price&order={{ $order }}">Hind</a></td>
+                <td class="px-4 py-2 w-32"><a href="?sort=stock_saldo&order={{ $order }}">Laoseis</a></td>
+                <td class="px-4 py-2 w-32"><a href="?sort=type&order={{ $order }}">Tüüp</a></td>
             </tr>
         </thead>
         <tbody class="text-sm">
             @foreach($books as $book)
             <tr>
-                <td class="border rounded px-4 py-2">{{ $book->title }}</td>
+                <td class="border rounded px-4 py-2"><a href="/book/{{ $book->id }}">{{ $book->title }}</a></td>
                 <td class="border rounded px-4 py-2"></td>
                 <td class="border rounded px-4 py-2">{{ $book->release_date }}</td>
                 <td class="border rounded px-4 py-2">{{ $book->pages }}</td>
@@ -36,7 +36,7 @@
         </tbody>
     </table>
     <div class="mt-4">
-        {{ $books->links() }}
+        {{ $books->withQueryString()->links() }}
     </div>
 
 </body>
