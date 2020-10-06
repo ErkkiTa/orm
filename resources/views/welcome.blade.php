@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <title>Library</title>
-</head>
-
-<body>
-    <nav class="bg-indigo-300 py-4 px-12 flex justify-center items-center shadow-lg">
-        <a href="/orders" class="mx-2 text-indigo-800 font-bold hover:text-gray-200">Tellimused</a>
-        <a href="http://" class="mx-2 text-indigo-800 font-bold hover:text-gray-200">Kliendid</a>
-        <a href="/books" class="mx-2 text-indigo-800 font-bold hover:text-gray-200">Raamatud</a>
-        <a href="http://" class="mx-2 text-indigo-800 font-bold hover:text-gray-200">Autorid</a>
-    </nav>
+@extends("layout.index")
+@section("content")
     <div class="p-12">
     <table class="w-full table-auto">
         <thead class="font-bold">
@@ -47,6 +32,4 @@
         {{ $books->withQueryString()->links() }}
     </div>
 
-</body>
-
-</html>
+@endsection
