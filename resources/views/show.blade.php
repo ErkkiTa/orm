@@ -9,7 +9,7 @@
 </head>
 <body class="h-full flex justify-center items-center">
     <div class="max-w-2xl">
-        <a href="/">Tagasi</a>
+        <a href="/books">Tagasi</a>
         <div class="text-2xl font-bold">{{ $book->title }}</div>
         <div class="flex mt-4">
             <div class="w-1/3 pr-4">
