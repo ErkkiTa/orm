@@ -9,7 +9,9 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::all();
-        return view('orders', compact('orders'));
+        $order = request('order') == 'asc' ? 'desc' : 'asc';
+        $orders = Order::sort($order)->paginate(20);
+        return view('orders', compact('orders', 'order'));
     }
 }
+
